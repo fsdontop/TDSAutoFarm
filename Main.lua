@@ -1,3 +1,7 @@
+if not game:IsLoaded() then 
+    game.Loaded:wait()
+end
+
 local REvent = game:GetService("ReplicatedStorage").RemoteEvent
 local RFunction = game:GetService("ReplicatedStorage").RemoteFunction
 
