@@ -4,9 +4,9 @@ local RFunction = game:GetService("ReplicatedStorage").RemoteFunction
 local System = {}
 local PlaceId = game.PlaceId
 
-getgenv().InLobby = (PlaceId == 3260590327)
+local InLobby = (PlaceId == 3260590327)
 
-if getgenv().InLobby then
+if InLobby then
     System.SearchFor = function(Table, Key)
         for CKey, _ in pairs(Table) do
             if CKey == Key then
@@ -179,5 +179,9 @@ else
         })
     end
 end
+
+setmetatable(System, {__index = function()
+    return function() end
+end})
 
 return System
